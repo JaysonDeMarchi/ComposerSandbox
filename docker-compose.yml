@@ -1,0 +1,11 @@
+version: "3.6"
+
+services:
+
+  composer:
+    image: composer
+    volumes:
+      - ./auth.json:/app/auth.json:delegated
+      - ./composer.json:/app/composer.json:delegated
+      - ./composer.lock:/app/composer.lock:delegated
+      - ~/.ssh:/app/.ssh:delegated
