@@ -1,0 +1,12 @@
+#!/bin/bash
+
+PROJECT_ROOT="$1"
+if [ -z "$PROJECT_ROOT" ]; then
+    read -p "Project Root Path: " PROJECT_ROOT
+fi
+
+echo "Copying Project composer files . . ."
+cp $PROJECT_ROOT/auth.json ./auth.json
+cp $PROJECT_ROOT/composer.json ./composer.json
+cp $PROJECT_ROOT/composer.lock ./composer.lock
+echo "Composer files copied."
