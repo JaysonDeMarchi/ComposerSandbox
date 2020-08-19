@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [ !-z "$1" ]; then
+    PROJECT_ROOT="$1"
+fi
+
+if [ -z "$PROJECT_ROOT" ]; then
+    read -p "Project Root Path: " PROJECT_ROOT
+fi
+
+echo "Updating $PROJECT_ROOT composer files . . ."
+cp ./auth.json $PROJECT_ROOT/auth.json
+cp ./composer.json $PROJECT_ROOT/composer.json
+cp ./composer.lock $PROJECT_ROOT/composer.lock
+echo "Composer files updated."
